@@ -153,7 +153,7 @@ AdSense の申請や `robots.txt`・`ads.txt` の設置には、独自ドメイ�
 
 - [ ] **独自ドメインを設定する**：AdSense はサイトをドメイン単位で登録し、`ads.txt` もドメインの直下に置く必要があります。`ユーザー名.github.io/リポジトリ名/` のままでは申請が難しいため、先に独自ドメインを設定してください。
 - [ ] **運営者情報**（`about.html`）の【】の部分を書き換える
-- [ ] **お問い合わせ**（`contact.html`）の Google フォームの URL（仮置きの `YOUR_FORM_ID`）を、実際のフォームの URL に差し替える
+- [x] **お問い合わせ**（`contact.html`）の Google フォームの URL を設定する（設定済み：https://forms.gle/7xYetTHFo9Wf4DUQ9）
 - [ ] **解説記事**（`articles/history-report-bibliography.html`）の本文を書き、【本文】の枠（`todo-note`）を消す。記事は複数あるほうが審査に有利です
 - [ ] **プライバシーポリシー**（`privacy.html`）の内容を確認する（アクセス解析などを追加したら追記する）
 - [ ] 申請時：AdSense の管理画面に表示されるコード（`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-…" crossorigin="anonymous"></script>`）を、各ページの `<head>` にある「広告：Google AdSense の審査用・自動広告用コード」のコメントの位置に貼る

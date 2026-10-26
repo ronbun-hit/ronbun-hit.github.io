@@ -72,6 +72,7 @@ B 編著所収    山田太郎「論文名」（鈴木一郎編『書名』吉�
 - canonical・OGP・sitemap・robots.txt・404.html の `<base>` には公開 URL `https://gazamidaiou-boop.github.io/ronbun-hit/` を絶対 URL で書いている。独自ドメインに移ったら一括置換する（README 参照）。
 - 広告は `<!-- 広告枠：… -->` のコメントで位置だけ確保している。広告コードはまだ入れない。入れるときは、ボタンのすぐ近くなど誤クリックを招く位置を避ける。
 - 解説記事は増やしていく予定。新しい記事は `articles/` に置き、既存の記事をひな形にする。
+- お問い合わせは Google フォーム（https://forms.gle/7xYetTHFo9Wf4DUQ9）へのリンク。フォームを作り直したら `contact.html` のリンクを差し替える。
 
 ## 文章とコードのスタイル
 
@@ -82,7 +83,6 @@ B 編著所収    山田太郎「論文名」（鈴木一郎編『書名』吉�
 ## 仮置きのもの（公開・申請前に差し替える）
 
 - サイト名「歴史学 参考文献メーカー」（仮）。変えるなら全ページと `design/ogp-template.html` → `assets/img/ogp.png` を作り直す。
-- `contact.html` の Google フォーム URL（`YOUR_FORM_ID`）。
 - `about.html` の運営者名・紹介文（【】の部分）。
 - 解説記事の本文（`todo-note` の枠）。
 - 独自ドメイン、`ads.txt`（AdSense のサイト運営者 ID が決まってから作る）。
