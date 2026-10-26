@@ -2,27 +2,27 @@
 <!-- 独自ドメインに移ったら、loc の URL をすべて新しいドメインに書き換えてください -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/</loc>
+    <loc>https://ronbun-hit.github.io/</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/howto.html</loc>
+    <loc>https://ronbun-hit.github.io/howto.html</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/articles/history-report-bibliography.html</loc>
+    <loc>https://ronbun-hit.github.io/articles/history-report-bibliography.html</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/about.html</loc>
+    <loc>https://ronbun-hit.github.io/about.html</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/privacy.html</loc>
+    <loc>https://ronbun-hit.github.io/privacy.html</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/contact.html</loc>
+    <loc>https://ronbun-hit.github.io/contact.html</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
 </urlset>

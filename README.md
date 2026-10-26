@@ -88,7 +88,7 @@ node --test
 2. GitHub のリポジトリのページで **Settings** → 左のメニューの **Pages** を開きます。
 3. **Build and deployment** の **Source** で **Deploy from a branch** を選びます。
 4. **Branch** で `main`、フォルダで `/ (root)` を選び、**Save** を押します。
-5. 数分待つと、Pages の設定画面の上部に公開 URL が表示されます。このリポジトリなら <https://gazamidaiou-boop.github.io/ronbun-hit/> です。
+5. 数分待つと、Pages の設定画面の上部に公開 URL が表示されます。このリポジトリ（組織 `ronbun-hit` の `ronbun-hit.github.io`）なら <https://ronbun-hit.github.io/> です。
 
 補足:
 
@@ -98,12 +98,12 @@ node --test
 
 ## 独自ドメインの設定手順
 
-AdSense の申請や `robots.txt`・`ads.txt` の設置には、独自ドメインがあると便利です（後述）。
+AdSense に申し込むなら、独自ドメインを設定しておくと確実です（後述のチェックリストを参照）。
 
 1. **ドメインを取得する**
    ドメイン登録サービス（レジストラ）で、使いたいドメインを取得します。以下では `example.com` を例にします。
 2. **（推奨）GitHub でドメインを検証する**
-   第三者にドメインを乗っ取られないよう、先に検証しておきます。GitHub 右上のアイコン → **Settings** → **Pages** → **Add a domain** でドメインを入力すると、`_github-pages-challenge-gazamidaiou-boop.example.com` のような名前の TXT レコードが表示されるので、これを DNS に追加して **Verify** を押します。
+   第三者にドメインを乗っ取られないよう、先に検証しておきます。組織 `ronbun-hit` のページで **Settings** → **Pages** → **Add a domain** にドメインを入力すると、`_github-pages-challenge-ronbun-hit.example.com` のような名前の TXT レコードが表示されるので、これを DNS に追加して **Verify** を押します。
 3. **DNS を設定する**（レジストラや DNS サービスの管理画面で）
    - `example.com`（サブドメインなし）で公開する場合は、A レコードを 4 つ作ります。
 
@@ -123,36 +123,36 @@ AdSense の申請や `robots.txt`・`ads.txt` の設置には、独自ドメイ�
      2606:50c0:8003::153
      ```
 
-     あわせて `www` の CNAME レコードを `gazamidaiou-boop.github.io` に向けておくと、`www.example.com` からも転送されます。
-   - `bunken.example.com` のようなサブドメインで公開する場合は、そのサブドメインの CNAME レコードを `gazamidaiou-boop.github.io` に向けます（リポジトリ名は付けません）。
+     あわせて `www` の CNAME レコードを `ronbun-hit.github.io` に向けておくと、`www.example.com` からも転送されます。
+   - `bunken.example.com` のようなサブドメインで公開する場合は、そのサブドメインの CNAME レコードを `ronbun-hit.github.io` に向けます。
 4. **リポジトリにドメインを登録する**
    リポジトリの **Settings** → **Pages** → **Custom domain** にドメインを入力して **Save** を押します。リポジトリの直下に `CNAME` というファイルが作られるので、手元のリポジトリにも取り込んで（`git pull`）おいてください。
 5. **HTTPS を有効にする**
    DNS の確認が終わると **Enforce HTTPS** にチェックできるようになるので、チェックを入れます。DNS の反映や証明書の発行には、数分から最大 24 時間ほどかかることがあります。
 6. **サイト内の URL を書き換える**
-   ページの canonical・OGP・サイトマップなどには、公開 URL を絶対 URL で書いています。`https://gazamidaiou-boop.github.io/ronbun-hit/` を新しい URL（例：`https://example.com/`）に、すべて置き換えてください。
+   ページの canonical・OGP・サイトマップなどには、公開 URL を絶対 URL で書いています。`https://ronbun-hit.github.io/` を新しい URL（例：`https://example.com/`）に、すべて置き換えてください。
 
-   対象：`*.html`（各ページの canonical・`og:url`・`og:image`、`404.html` の `<base>`、`about.html` の URL 欄）、`sitemap.xml`、`robots.txt`
+   対象：`*.html`（各ページの canonical・`og:url`・`og:image`、`about.html` の URL 欄）、`sitemap.xml`、`robots.txt`（`404.html` は `<base href="/">` なので書き換え不要）
 
    VS Code なら「フォルダーを指定して置換」（`Ctrl + Shift + H`、macOS は `Cmd + Shift + H`）で一括置換できます。コマンドで置き換える場合の例：
 
    ```sh
    # Linux
-   grep -rl "https://gazamidaiou-boop.github.io/ronbun-hit/" --include="*.html" --include="*.xml" --include="*.txt" . \
-     | xargs sed -i 's#https://gazamidaiou-boop.github.io/ronbun-hit/#https://example.com/#g'
+   grep -rl "https://ronbun-hit.github.io/" --include="*.html" --include="*.xml" --include="*.txt" . \
+     | xargs sed -i 's#https://ronbun-hit.github.io/#https://example.com/#g'
    # macOS（sed -i の後に '' が必要）
-   grep -rl "https://gazamidaiou-boop.github.io/ronbun-hit/" --include="*.html" --include="*.xml" --include="*.txt" . \
-     | xargs sed -i '' 's#https://gazamidaiou-boop.github.io/ronbun-hit/#https://example.com/#g'
+   grep -rl "https://ronbun-hit.github.io/" --include="*.html" --include="*.xml" --include="*.txt" . \
+     | xargs sed -i '' 's#https://ronbun-hit.github.io/#https://example.com/#g'
    ```
 
-   置き換えたら `git grep "gazamidaiou-boop.github.io"` で残りがないか確かめ、コミットして push します。
+   置き換えたら `git grep "https://ronbun-hit.github.io" -- "*.html" "*.xml" "*.txt"` で残りがないか確かめ、コミットして push します。
 
 ## Google AdSense に申し込む前のチェックリスト
 
 広告を入れる位置は、各ページに `<!-- 広告枠：… -->` というコメントで確保してあります（広告コードはまだ入っていません）。
 
-- [ ] **独自ドメインを設定する**：AdSense はサイトをドメイン単位で登録し、`ads.txt` もドメインの直下に置く必要があります。`ユーザー名.github.io/リポジトリ名/` のままでは申請が難しいため、先に独自ドメインを設定してください。
-- [ ] **運営者情報**（`about.html`）の【】の部分を書き換える
+- [ ] **独自ドメインを設定する**：AdSense はサイトをドメイン単位で登録し、`ronbun-hit.github.io` のような github.io のアドレスでは登録できない場合があるため、先に独自ドメインを設定しておくと確実です。
+- [x] **運営者情報**（`about.html`）の運営者名と紹介文を書く（設定済み）
 - [x] **お問い合わせ**（`contact.html`）の Google フォームの URL を設定する（設定済み：https://forms.gle/7xYetTHFo9Wf4DUQ9）
 - [ ] **解説記事**（`articles/history-report-bibliography.html`）の本文を書き、【本文】の枠（`todo-note`）を消す。記事は複数あるほうが審査に有利です
 - [ ] **プライバシーポリシー**（`privacy.html`）の内容を確認する（アクセス解析などを追加したら追記する）
