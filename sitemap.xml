@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 独自ドメインに移ったら、loc の URL をすべて新しいドメインに書き換えてください -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/howto.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/articles/history-report-bibliography.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/about.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/privacy.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://gazamidaiou-boop.github.io/ronbun-hit/contact.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+</urlset>

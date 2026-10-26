@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>OGP 画像の元データ</title>
+  <!--
+    SNS で共有されたときに表示される画像（assets/img/ogp.png、1200×630）の元データです。
+    サイト名などを変えたら、このファイルを書き換えてブラウザで開き、
+    幅 1200・高さ 630 の画面でスクリーンショットを撮って assets/img/ogp.png を置き換えてください。
+    （Chrome なら、デベロッパーツールのデバイスツールバーで 1200×630 にして「スクリーンショットをキャプチャ」）
+  -->
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+
+    body {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #f6f5f1;
+      color: #1f2328;
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "Meiryo", "Inter", "IPAPGothic", sans-serif;
+    }
+
+    .band {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 28px;
+      background: #23466e;
+    }
+
+    .frame {
+      position: absolute;
+      inset: 0 0 0 28px;
+      display: flex;
+      flex-direction: column;
+      padding: 56px 72px 44px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      font-size: 30px;
+      font-weight: 700;
+      color: #23466e;
+      letter-spacing: 0.04em;
+    }
+
+    .eyebrow img {
+      width: 56px;
+      height: 56px;
+    }
+
+    h1 {
+      margin: 26px 0 14px;
+      font-size: 80px;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .sub {
+      margin: 0 0 36px;
+      font-size: 34px;
+      color: #4a4f57;
+    }
+
+    .card {
+      padding: 22px 30px;
+      background: #ffffff;
+      border: 2px solid #dad7cf;
+      border-left: 10px solid #23466e;
+      border-radius: 14px;
+      font-size: 27px;
+      line-height: 1.75;
+    }
+
+    .card .en {
+      font-family: "Liberation Serif", "Times New Roman", "DejaVu Serif", serif;
+      font-size: 28px;
+    }
+
+    .foot {
+      margin: auto 0 0;
+      font-size: 26px;
+      color: #4a4f57;
+    }
+
+    .foot strong {
+      color: #1d6b3a;
+    }
+  </style>
+</head>
+<body>
+  <div class="band"></div>
+  <div class="frame">
+    <p class="eyebrow"><img src="../assets/img/favicon.svg" alt="">CiNii の書き出し → 参考文献リスト</p>
+    <h1>歴史学 参考文献メーカー</h1>
+    <p class="sub">貼り付けるだけで、「」『』の和文表記と Chicago 形式に。</p>
+    <div class="card">
+      <div>山田太郎「論文名」『史学雑誌』120編3号、2011年、1–20頁。</div>
+      <div class="en">Smith, John. “Title of Article.” <i>Journal of Asian Studies</i> 72, no. 2 (2013): 301–325.</div>
+    </div>
+    <p class="foot"><strong>入力内容はブラウザの中だけで処理</strong>　無料・登録不要</p>
+  </div>
+</body>
+</html>

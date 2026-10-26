@@ -1,0 +1,9 @@
+# 検索エンジンのクローラー向けの設定
+# 注意：robots.txt はドメインの直下（https://example.com/robots.txt）に置いたときだけ読まれます。
+# 「ユーザー名.github.io/ronbun-hit/」のようなプロジェクトサイトでは読まれないため、
+# 独自ドメインを設定してから有効になります（README の「独自ドメインの設定」を参照）。
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gazamidaiou-boop.github.io/ronbun-hit/sitemap.xml

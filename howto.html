@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>使い方｜歴史学 参考文献メーカー</title>
+  <meta name="description" content="歴史学 参考文献メーカーの使い方。CiNii Research で BibTeX・RIS を書き出して貼り付ける方法から、手入力、書式プリセットの切り替え、細かい設定、並べ替え、コピー、保存と削除まで、手順を説明します。">
+  <link rel="canonical" href="https://gazamidaiou-boop.github.io/ronbun-hit/howto.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="歴史学 参考文献メーカー">
+  <meta property="og:title" content="使い方｜歴史学 参考文献メーカー">
+  <meta property="og:description" content="CiNii Research の書き出しを貼り付けて、歴史学向けの参考文献リストを作るまでの手順を説明します。">
+  <meta property="og:url" content="https://gazamidaiou-boop.github.io/ronbun-hit/howto.html">
+  <meta property="og:image" content="https://gazamidaiou-boop.github.io/ronbun-hit/assets/img/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="歴史学 参考文献メーカー：CiNii の書き出しから参考文献リストを作成">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#23466e">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- 広告：Google AdSense の審査用・自動広告用コードは、申請時にここへ貼り付ける -->
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="container container-wide header-inner">
+      <a class="site-title" href="./">歴史学 参考文献メーカー</a>
+      <nav class="site-nav" aria-label="サイト内">
+        <ul>
+          <li><a href="./">ツール</a></li>
+          <li><a href="howto.html" aria-current="page">使い方</a></li>
+          <li><a href="articles/history-report-bibliography.html">書き方ガイド</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <nav aria-label="パンくずリスト">
+      <ol class="breadcrumb">
+        <li><a href="./">トップ</a></li>
+        <li aria-current="page">使い方</li>
+      </ol>
+    </nav>
+
+    <article class="panel prose">
+      <h1>使い方</h1>
+      <p class="lead">CiNii Research の書き出しを貼り付けるか手入力するだけで、歴史学のレポートや論文で使う参考文献リストを作れます。ここでは、文献の追加からコピーまでの手順を順に説明します。</p>
+
+      <div class="toc">
+        <p>目次</p>
+        <ol>
+          <li><a href="#export">CiNii Research から書誌を書き出す</a></li>
+          <li><a href="#paste">貼り付けて読み取る</a></li>
+          <li><a href="#manual">手入力で追加する</a></li>
+          <li><a href="#presets">書式を選ぶ</a></li>
+          <li><a href="#settings">細かい設定</a></li>
+          <li><a href="#sort">並べ替える</a></li>
+          <li><a href="#copy">コピーして使う</a></li>
+          <li><a href="#storage">保存と削除</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </div>
+
+      <section aria-labelledby="export">
+        <h2 id="export">1. CiNii Research から書誌を書き出す</h2>
+        <ol>
+          <li><a href="https://cir.nii.ac.jp/" rel="noopener">CiNii Research</a> で文献を検索します。</li>
+          <li>文献の詳細画面を開くか、検索結果の一覧で使いたい文献にチェックを入れます（複数選べます）。</li>
+          <li>「書き出し」のメニューから <strong>BibTeX</strong> か <strong>RIS</strong> を選びます。</li>
+          <li>表示された文字列をすべて選んでコピーします。ファイルとして保存された場合は、メモ帳などのテキストエディタで開いてコピーしてください。</li>
+        </ol>
+        <p class="hint">CiNii Research の画面の表記や配置は変わることがあります。BibTeX は「@article{」などで、RIS は「TY  - 」で始まる文字列です。CiNii 以外のデータベースや文献管理ソフトが書き出した BibTeX・RIS も、たいていはそのまま読み取れます。</p>
+      </section>
+
+      <section aria-labelledby="paste">
+        <h2 id="paste">2. 貼り付けて読み取る</h2>
+        <ol>
+          <li>ツールの「<strong>貼り付けで追加</strong>」タブを開きます。</li>
+          <li>入力欄に、コピーした書き出しをそのまま貼り付けます。何件まとめて貼り付けても構いません。BibTeX と RIS が混ざっていても読み取れます。</li>
+          <li>「<strong>読み取ってリストに追加</strong>」を押すと、右側（スマホでは下）の参考文献リストに追加されます。</li>
+        </ol>
+        <p>すでにリストにある文献と同じものは、二重に追加しません。読み取れなかった記録があるときは、その件数と理由を表示します。試しに動かしてみたいときは「サンプルを入れる」を押してください（架空の書誌が入ります）。</p>
+        <h3>読み取るときに自動で整えること</h3>
+        <ul>
+          <li>日本人の著者名「山田, 太郎」は「山田太郎」と詰めて書きます。中国人・韓国人の名前（「李, 大明」「김, 민수」）も同じです。</li>
+          <li>カタカナで書かれた外国人名「ブロック, マルク」は「マルク・ブロック」の順にします。</li>
+          <li>欧文（ラテン文字）の著者名は、書き出されたままの形で扱います。</li>
+          <li>名前に「編」「訳」が付いていれば、編者・訳者として扱います（訳者のいる和文の本は「翻訳書」になります）。</li>
+          <li>「書名 = English title」のような並列タイトルや、「東京 : 吉川弘文館」のように出版地の付いた出版社名を整理します。</li>
+          <li>中国語・韓国語の文献も、和文と同じく論文名を「」、書名・雑誌名を『』で囲みます。</li>
+        </ul>
+        <p>読み取った内容に誤りや不足があるときは、リストの「<strong>編集</strong>」から直せます。</p>
+      </section>
+
+      <section aria-labelledby="manual">
+        <h2 id="manual">3. 手入力で追加する</h2>
+        <p>「<strong>手入力で追加</strong>」タブで資料の種類を選ぶと、その種類に必要な項目だけが表示されます。入力中は、下のプレビューに表記の見本が出ます。</p>
+        <div class="table-scroll">
+          <table>
+            <caption class="hint">資料の種類と主な入力項目</caption>
+            <thead>
+              <tr><th scope="col">種類</th><th scope="col">主な項目</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">論文</th><td>著者、論文名、雑誌名、巻、号、刊行年、頁</td></tr>
+              <tr><th scope="row">単行本</th><td>著者（または編者）、書名、出版社、刊行年</td></tr>
+              <tr><th scope="row">編著所収論文</th><td>著者、論文名、収録図書の編者、収録図書名、出版社、刊行年、頁</td></tr>
+              <tr><th scope="row">翻訳書</th><td>原著者、訳者、書名、出版社、刊行年、原著の情報（任意）</td></tr>
+              <tr><th scope="row">欧文論文</th><td>著者、論文名、雑誌名、巻、号、刊行年、頁</td></tr>
+              <tr><th scope="row">欧文単行本</th><td>著者（または編者）、訳者（任意）、書名、出版地（任意）、出版社、刊行年</td></tr>
+              <tr><th scope="row">欧文編著所収論文</th><td>著者、論文名、収録図書の編者、収録図書名、頁、出版地（任意）、出版社、刊行年</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>入力のこつ</h3>
+        <ul>
+          <li><strong>名前</strong>：複数いるときは1行に1人ずつ入力します。和文は「山田, 太郎」「山田太郎」のどちらでも構いません。欧文は「Smith, John」のように「姓, 名」の順で入力してください。団体名は「{United Nations}」のように波括弧で囲むと、姓と名に分けずにそのまま表示します。</li>
+          <li><strong>巻・号</strong>：数字だけを入れると「120巻3号」のように単位を補います（『史学雑誌』は「120編」）。「第3期」「210輯」のように、単位まで入力することもできます。</li>
+          <li><strong>よみ</strong>：「著者名のよみ」を入れておくと、著者名順に並べ替えるときに五十音順で正しく並びます。</li>
+          <li><strong>編集をやめる</strong>：リストの文献を編集している途中でやめたいときは「編集をやめる」を押します。リストは変わりません。</li>
+        </ul>
+      </section>
+
+      <!-- 広告枠：本文の途中（見出しの間） -->
+
+      <section aria-labelledby="presets">
+        <h2 id="presets">4. 書式を選ぶ</h2>
+        <p>和文の文献は、2つの書式プリセットから選べます。いつでも切り替えられ、リスト全体の表記がすぐに変わります。</p>
+        <h3>プリセット A：出版事項を続けて書く</h3>
+        <div class="example">
+          <p>山田太郎「論文名」『史学雑誌』120編3号、2011年、1–20頁。</p>
+          <p>山田太郎『書名』吉川弘文館、2011年。</p>
+          <p>山田太郎「論文名」鈴木一郎編『書名』吉川弘文館、2011年、1–20頁。</p>
+          <p>ポール・デュラン著、高橋三郎訳『書名』岩波書店、2004年。</p>
+        </div>
+        <h3>プリセット B：出版事項を括弧に入れる</h3>
+        <div class="example">
+          <p>山田太郎「論文名」（『史学雑誌』120編3号、2011年）。</p>
+          <p>山田太郎『書名』（吉川弘文館、2011年）。</p>
+          <p>山田太郎「論文名」（鈴木一郎編『書名』吉川弘文館、2011年）。</p>
+          <p>ポール・デュラン著、高橋三郎訳『書名』（岩波書店、2004年）。</p>
+        </div>
+        <p>プリセット B では頁を省きます。</p>
+        <h3>欧文は Chicago 形式</h3>
+        <p>欧文の文献は、歴史学で広く使われる Chicago Manual of Style の注・参考文献方式（Notes and Bibliography）のうち、参考文献（Bibliography）の形で出力します。雑誌名・書名はイタリックになります。</p>
+        <div class="example" lang="en">
+          <p>Smith, John. “Title of Article.” <i>Journal of Asian Studies</i> 72, no. 2 (2013): 301–325.</p>
+          <p>Carr, Edward Hallett. <i>What Is History?</i> London: Macmillan, 1961.</p>
+          <p>Smith, John. “Chapter Title.” In <i>Book Title</i>, edited by Jane Doe, 1–20. Oxford: Oxford University Press, 2011.</p>
+        </div>
+        <p>出版地は入力したときだけ表示します（Chicago 第18版では出版地を省略できます）。著者が7人以上のときは、第18版にならって最初の3人の後に「et al.」を付けます。</p>
+      </section>
+
+      <section aria-labelledby="settings">
+        <h2 id="settings">5. 細かい設定</h2>
+        <p>「細かい設定（和文の表記）」を開くと、次の項目を変えられます。欧文は Chicago 形式の決まりに従うため、これらの設定は使いません。</p>
+        <dl>
+          <dt>数字</dt>
+          <dd>巻号・年・頁の数字を半角（2011）か全角（２０１１）にそろえます。書名や論文名の中の数字は、元の表記のまま変えません。</dd>
+          <dt>頁範囲の記号</dt>
+          <dd>「1–20」（エンダッシュ）、「1-20」（ハイフン）、「1～20」（波ダッシュ）から選べます。</dd>
+          <dt>末尾の句点</dt>
+          <dd>各文献の最後に「。」を付けるかどうかを選べます。</dd>
+          <dt>「主題 : 副題」の書き方</dt>
+          <dd>CiNii の書誌では、副題が「主題 : 副題」と書かれていることがよくあります。これを「主題――副題」「主題――副題――」「主題：副題」に書き換えるか、そのまま残すかを選べます。</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="sort">
+        <h2 id="sort">6. 並べ替える</h2>
+        <ul>
+          <li><strong>入力順</strong>：リストに追加した順に並べます。</li>
+          <li><strong>和文→欧文、それぞれ著者名順</strong>：和文の文献を先に、欧文の文献を後にまとめ、それぞれ著者名の順に並べます。同じ著者の文献は刊行年の順です。</li>
+        </ul>
+        <p>欧文は姓のアルファベット順に並びます。和文の漢字の名前は、読みが分からないため、そのままでは文字コードの順（おおむね最初の字の音読みの順）になります。五十音順に正しく並べたいときは、手入力（または「編集」）で「著者名のよみ」を入れてください。読みを入れた文献と入れていない文献が混ざると、読みのある文献が先に並びます。</p>
+      </section>
+
+      <section aria-labelledby="copy">
+        <h2 id="copy">7. コピーして使う</h2>
+        <p>文献ごとの「<strong>コピー</strong>」で1件を、「<strong>すべてコピー</strong>」でリスト全体を、表示されている順にコピーできます。レポートの文書に貼り付けて使ってください。</p>
+        <p>欧文の書名・雑誌名のイタリックは、Word や Google ドキュメントに貼り付けると保たれます。「書式なしで貼り付け」を選ぶとイタリックは外れるので、その場合は手で設定してください。</p>
+      </section>
+
+      <section aria-labelledby="storage">
+        <h2 id="storage">8. 保存と削除</h2>
+        <p>作ったリストと設定は、お使いのブラウザの中（localStorage）に自動で保存され、次にこのページを開いたときも残っています。サーバーには送信しないため、別の端末やブラウザとは共有されません。プライベートブラウズ（シークレットモード）などでは保存できないことがあり、その場合は画面に案内を表示します。</p>
+        <p>文献ごとの「<strong>削除</strong>」で1件を、「<strong>すべて削除</strong>」でリスト全体を消せます。削除の直後に表示される「元に戻す」で取り消せます。ブラウザの閲覧データ（サイトデータ）を消去したときも、保存したリストは消えます。</p>
+      </section>
+
+      <section aria-labelledby="faq">
+        <h2 id="faq">よくある質問</h2>
+        <dl>
+          <dt>入力した文献は、どこかに送信されますか？</dt>
+          <dd>いいえ。読み取りも整形もすべてお使いのブラウザの中で行い、入力内容をサーバーに送ることはありません。</dd>
+          <dt>授業で指定された書式と少し違います。</dt>
+          <dd>参考文献の書式は、授業や学会誌によって細部が異なります。指定がある場合は必ずそちらを優先し、コピーした後で必要な部分を直してください。</dd>
+          <dt>「読み取れませんでした」と表示されます。</dt>
+          <dd>貼り付けた文字列が BibTeX（「@article{」などで始まる）か RIS（「TY  - 」で始まる）になっているか確かめてください。CiNii Research の詳細画面の文章をそのままコピーしても読み取れません。うまくいかないときは手入力をお使いください。</dd>
+          <dt>巻を「巻」ではなく「輯」「集」「期」と書きたいです。</dt>
+          <dd>巻・号の欄に「210輯」「第3期」のように単位まで入力すると、そのまま表示します。</dd>
+          <dt>欧文の著者名が「姓, 名」の形で和文の文献に出てきます。</dt>
+          <dd>和文の文献に含まれる欧文の名前は、書き出されたままの形で表示します。カタカナ表記にしたい場合などは「編集」で直してください。</dd>
+          <dt>スマートフォンでも使えますか？</dt>
+          <dd>はい。スマートフォンでもパソコンでも同じように使えます。</dd>
+        </dl>
+      </section>
+
+      <p class="cta"><a class="button button-primary" href="./">ツールを使う</a></p>
+    </article>
+
+    <!-- 広告枠：本文の下 -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container container-wide footer-inner">
+      <nav aria-label="サイト情報">
+        <ul class="footer-links">
+          <li><a href="howto.html">使い方</a></li>
+          <li><a href="articles/history-report-bibliography.html">書き方ガイド</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <p class="copyright">© 2026 歴史学 参考文献メーカー</p>
+    </div>
+  </footer>
+</body>
+</html>

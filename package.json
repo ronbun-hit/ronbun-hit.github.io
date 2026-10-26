@@ -1,0 +1,13 @@
+{
+  "name": "rekishi-bunken-maker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "歴史学 参考文献メーカー：CiNii の書き出し（BibTeX・RIS）や手入力から、歴史学向けの参考文献リストを作る静的サイト",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

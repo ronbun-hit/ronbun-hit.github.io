@@ -1,0 +1,7 @@
+# OS・エディタが作るファイル
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Node.js（依存パッケージはないが、念のため）
+node_modules/

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>歴史学 参考文献メーカー｜CiNiiの書き出しから参考文献リストを作成</title>
+  <meta name="description" content="歴史学のレポート・卒業論文向けの参考文献表記ジェネレーター。CiNii Research の書き出し（BibTeX・RIS）を貼り付けるか手入力するだけで、「」『』を使った和文表記や欧文の Chicago 形式に整えます。入力内容はブラウザ内だけで処理します。">
+  <link rel="canonical" href="https://gazamidaiou-boop.github.io/ronbun-hit/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="歴史学 参考文献メーカー">
+  <meta property="og:title" content="歴史学 参考文献メーカー｜CiNiiの書き出しから参考文献リストを作成">
+  <meta property="og:description" content="CiNii Research の書き出しを貼り付けるだけで、歴史学のレポート・論文向けの参考文献リストを作れる無料ツール。和文は「」『』、欧文は Chicago 形式。">
+  <meta property="og:url" content="https://gazamidaiou-boop.github.io/ronbun-hit/">
+  <meta property="og:image" content="https://gazamidaiou-boop.github.io/ronbun-hit/assets/img/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="歴史学 参考文献メーカー：CiNii の書き出しから参考文献リストを作成">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#23466e">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- 広告：Google AdSense の審査用・自動広告用コード（<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-…">）は、申請時にここへ貼り付ける -->
+  <script>
+    // ファイルを直接開いた（file://）場合はモジュールが読み込めないので、案内を出す
+    if (location.protocol === 'file:') document.documentElement.classList.add('is-file-protocol');
+  </script>
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="container container-wide header-inner">
+      <a class="site-title" href="./">歴史学 参考文献メーカー</a>
+      <nav class="site-nav" aria-label="サイト内">
+        <ul>
+          <li><a href="./" aria-current="page">ツール</a></li>
+          <li><a href="howto.html">使い方</a></li>
+          <li><a href="articles/history-report-bibliography.html">書き方ガイド</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container container-wide">
+    <section class="intro">
+      <h1>歴史学の参考文献リストを、貼り付けて整える</h1>
+      <p class="lead">CiNii Research の書き出し（BibTeX・RIS）を貼り付けるか手入力するだけで、歴史学でよく使われる「」『』の表記や、欧文の Chicago 形式に整えます。</p>
+      <ul class="notices">
+        <li class="notice notice-privacy"><strong>入力した内容はサーバーに送信されません。</strong>読み取りも整形もすべてお使いのブラウザの中で行い、作ったリストはこの端末のブラウザ（localStorage）にだけ保存されます。</li>
+        <li class="notice notice-caution"><strong>授業や学会誌で書式の指定がある場合は、そちらを優先してください。</strong></li>
+      </ul>
+      <p class="notice notice-warn file-protocol-warning">ファイルを直接開いているため、ツールが動きません。README の「ローカルでの確認方法」に沿って、ローカルサーバー経由（http://localhost:8000/ など）で開いてください。</p>
+      <noscript><p class="notice notice-warn">このツールは JavaScript を使います。ブラウザの設定で JavaScript を有効にしてください。</p></noscript>
+    </section>
+
+    <div class="tool-layout">
+      <section class="panel panel-input" aria-labelledby="input-heading">
+        <h2 id="input-heading" class="panel-title"><span class="step">1</span>文献を追加する</h2>
+
+        <div class="tabs" role="tablist" aria-label="追加の方法">
+          <button type="button" class="tab" role="tab" id="tab-paste" aria-controls="panel-paste" aria-selected="true">貼り付けで追加</button>
+          <button type="button" class="tab" role="tab" id="tab-manual" aria-controls="panel-manual" aria-selected="false" tabindex="-1">手入力で追加</button>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="panel-paste" aria-labelledby="tab-paste" tabindex="0">
+          <label for="paste-input" class="field-label">CiNii Research の書き出し（BibTeX または RIS）</label>
+          <p class="hint" id="paste-hint">複数件をまとめて貼り付けられます。形式は自動で見分けます。</p>
+          <textarea id="paste-input" rows="9" spellcheck="false" autocomplete="off" aria-describedby="paste-hint" placeholder="@article{…} や TY  - JOUR … で始まる書き出しを、そのまま貼り付けてください"></textarea>
+          <div class="button-row">
+            <button type="button" id="paste-submit" class="button button-primary">読み取ってリストに追加</button>
+            <button type="button" id="paste-sample" class="button button-ghost">サンプルを入れる</button>
+            <button type="button" id="paste-clear" class="button button-ghost">入力欄を空にする</button>
+          </div>
+          <div id="paste-status" class="status" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="panel-manual" aria-labelledby="tab-manual" tabindex="0" hidden>
+          <form id="manual-form" novalidate>
+            <div class="field">
+              <label for="manual-type" class="field-label">資料の種類</label>
+              <select id="manual-type" name="type">
+                <optgroup label="和文（日本語・中国語・韓国語）">
+                  <option value="ja-article">論文</option>
+                  <option value="ja-book">単行本</option>
+                  <option value="ja-chapter">編著所収論文</option>
+                  <option value="ja-translation">翻訳書</option>
+                </optgroup>
+                <optgroup label="欧文（Chicago 形式）">
+                  <option value="en-article">欧文論文</option>
+                  <option value="en-book">欧文単行本</option>
+                  <option value="en-chapter">欧文編著所収論文</option>
+                </optgroup>
+              </select>
+            </div>
+            <div id="manual-fields" class="field-grid"></div>
+            <div class="preview" aria-live="polite">
+              <p class="preview-label">プレビュー</p>
+              <p id="manual-preview" class="preview-text">入力すると、ここに表記の見本が出ます。</p>
+            </div>
+            <div class="button-row">
+              <button type="submit" id="manual-submit" class="button button-primary">リストに追加</button>
+              <button type="button" id="manual-reset" class="button button-ghost">入力欄を空にする</button>
+              <button type="button" id="manual-cancel" class="button button-ghost" hidden>編集をやめる</button>
+            </div>
+            <div id="manual-status" class="status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="list-heading">
+        <h2 id="list-heading" class="panel-title"><span class="step">2</span>書式を選んでコピーする <span id="entry-count" class="count"></span></h2>
+
+        <fieldset class="presets">
+          <legend class="field-label">和文の書式</legend>
+          <label class="preset">
+            <input type="radio" name="preset" value="A">
+            <span class="preset-body">
+              <span class="preset-name">A：出版事項を続けて書く</span>
+              <span class="preset-example">山田太郎「論文名」『史学雑誌』120編3号、2011年、1–20頁。</span>
+            </span>
+          </label>
+          <label class="preset">
+            <input type="radio" name="preset" value="B">
+            <span class="preset-body">
+              <span class="preset-name">B：出版事項を括弧に入れる（頁は省く）</span>
+              <span class="preset-example">山田太郎「論文名」（『史学雑誌』120編3号、2011年）。</span>
+            </span>
+          </label>
+          <p class="hint">欧文は Chicago 形式（注・参考文献方式の参考文献の形）で出力します。</p>
+        </fieldset>
+
+        <details class="settings">
+          <summary>細かい設定（和文の表記）</summary>
+          <div class="settings-body">
+            <fieldset class="choice">
+              <legend>数字</legend>
+              <label><input type="radio" name="digits" value="half"> 半角（2011）</label>
+              <label><input type="radio" name="digits" value="full"> 全角（２０１１）</label>
+            </fieldset>
+            <fieldset class="choice">
+              <legend>頁範囲の記号</legend>
+              <label><input type="radio" name="pageDash" value="–"> 1–20</label>
+              <label><input type="radio" name="pageDash" value="-"> 1-20</label>
+              <label><input type="radio" name="pageDash" value="～"> 1～20</label>
+            </fieldset>
+            <fieldset class="choice">
+              <legend>末尾の句点</legend>
+              <label><input type="radio" name="period" value="true"> あり（…頁。）</label>
+              <label><input type="radio" name="period" value="false"> なし（…頁）</label>
+            </fieldset>
+            <div class="field">
+              <label for="setting-subtitle" class="field-label">「主題 : 副題」の書き方</label>
+              <select id="setting-subtitle" name="subtitle">
+                <option value="dash">主題――副題</option>
+                <option value="dash-enclose">主題――副題――</option>
+                <option value="colon">主題：副題</option>
+                <option value="keep">そのまま（主題 : 副題）</option>
+              </select>
+              <p class="hint">CiNii の書誌でよく見る「 : 」（前後に空白のあるコロン）だけを書き換えます。</p>
+            </div>
+            <p class="hint">数字の設定は巻号・年・頁に使い、書名や論文名の表記は変えません。欧文は Chicago 形式の決まり（半角数字・エンダッシュ・ピリオド）で固定です。</p>
+          </div>
+        </details>
+
+        <div class="list-toolbar">
+          <div class="field field-inline">
+            <label for="setting-sort" class="field-label">並べ替え</label>
+            <select id="setting-sort" name="sort">
+              <option value="input">入力順</option>
+              <option value="author">和文→欧文、それぞれ著者名順</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" id="copy-all" class="button button-primary">すべてコピー</button>
+            <button type="button" id="delete-all" class="button button-danger">すべて削除</button>
+          </div>
+        </div>
+
+        <div id="list-status" class="status" role="status" aria-live="polite"></div>
+        <p id="list-empty" class="empty">まだ文献がありません。「貼り付けで追加」か「手入力で追加」から追加してください。</p>
+        <ul id="entry-list" class="entry-list" aria-label="参考文献リスト"></ul>
+        <p id="storage-warning" class="notice notice-warn" hidden>このブラウザではリストを保存できません（プライベートブラウズ中など）。ページを閉じるとリストは消えるので、先にコピーしておいてください。</p>
+      </section>
+    </div>
+
+    <!-- 広告枠：ツールの下（AdSense の承認後、ここに広告ユニットのコードを貼り付ける。ボタンの近くは誤クリックを招くので避ける） -->
+
+    <section class="panel prose about-tool" aria-labelledby="about-heading">
+      <h2 id="about-heading">このツールでできること</h2>
+      <ul>
+        <li><strong>CiNii の書き出しをそのまま変換</strong>：CiNii Research の書き出し（BibTeX・RIS）を貼り付けると、著者・タイトル・雑誌名・巻号・頁などを自動で読み取ります。複数件もまとめて変換できます。</li>
+        <li><strong>歴史学の表記に整える</strong>：論文名は「」、書名・雑誌名は『』で囲み、日本人の著者名「山田, 太郎」は「山田太郎」と詰めて書きます。中国語・韓国語の文献も和文と同じく「」『』で扱います。</li>
+        <li><strong>欧文は Chicago 形式</strong>：欧文の論文・単行本は、歴史学で広く使われる Chicago Manual of Style の注・参考文献方式（参考文献の形）で出力します。</li>
+        <li><strong>手入力にも対応</strong>：論文・単行本・編著所収論文・翻訳書・欧文論文・欧文単行本などから種類を選ぶと、必要な項目だけが表示されます。</li>
+        <li><strong>コピーして貼り付けるだけ</strong>：1件ごと、または全件をまとめてコピーできます。作ったリストはこのブラウザに保存され、次に開いたときも残っています。</li>
+      </ul>
+      <p>詳しい手順は「<a href="howto.html">使い方</a>」を、参考文献の書き方そのものについては「<a href="articles/history-report-bibliography.html">歴史学レポートの参考文献の書き方</a>」をご覧ください。</p>
+    </section>
+
+    <!-- 広告枠：ページ下部（フッターの上） -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container container-wide footer-inner">
+      <nav aria-label="サイト情報">
+        <ul class="footer-links">
+          <li><a href="howto.html">使い方</a></li>
+          <li><a href="articles/history-report-bibliography.html">書き方ガイド</a></li>
+          <li><a href="about.html">運営者情報</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <p class="copyright">© 2026 歴史学 参考文献メーカー</p>
+    </div>
+  </footer>
+</body>
+</html>
