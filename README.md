@@ -32,7 +32,7 @@ B：山田太郎「論文名」（『史学雑誌』120編3号、2011年）。
 index.html                 トップ（ツール本体）
 howto.html                 使い方
 articles/
-  history-report-bibliography.html   解説記事のひな形「歴史学レポートの参考文献の書き方」
+  history-report-bibliography.html   解説記事「歴史学レポートの参考文献の書き方」
 privacy.html               プライバシーポリシー
 contact.html               お問い合わせ（Google フォームへのリンク）
 about.html                 運営者情報
@@ -154,7 +154,8 @@ AdSense に申し込むなら、独自ドメインを設定しておくと確実
 - [ ] **独自ドメインを設定する**：AdSense はサイトをドメイン単位で登録し、`ronbun-hit.github.io` のような github.io のアドレスでは登録できない場合があるため、先に独自ドメインを設定しておくと確実です。
 - [x] **運営者情報**（`about.html`）の運営者名と紹介文を書く（設定済み）
 - [x] **お問い合わせ**（`contact.html`）の Google フォームの URL を設定する（設定済み：https://forms.gle/7xYetTHFo9Wf4DUQ9）
-- [ ] **解説記事**（`articles/history-report-bibliography.html`）の本文を書き、【本文】の枠（`todo-note`）を消す。記事は複数あるほうが審査に有利です
+- [x] **解説記事**（`articles/history-report-bibliography.html`）の本文を書く（設定済み）
+- [ ] 解説記事を増やす（記事は複数あるほうが審査に有利です）
 - [ ] **プライバシーポリシー**（`privacy.html`）の内容を確認する（アクセス解析などを追加したら追記する）
 - [ ] 申請時：AdSense の管理画面に表示されるコード（`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-…" crossorigin="anonymous"></script>`）を、各ページの `<head>` にある「広告：Google AdSense の審査用・自動広告用コード」のコメントの位置に貼る
 - [ ] リポジトリの直下に `ads.txt` を作り、次の 1 行を書く（`pub-` の後は自分のサイト運営者 ID）
