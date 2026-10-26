@@ -82,7 +82,9 @@ node --test
 
 ## GitHub Pages での公開手順
 
-1. 公開したい内容を `main` ブランチに入れます（作業ブランチで作った場合は、Pull Request を作って `main` にマージします）。
+1. 公開したい内容を `main` ブランチに入れます。
+   - リポジトリに `main` がまだない場合は、リポジトリのページの **Branches**（ブランチ一覧）で **New branch** を押し、作業ブランチ（`claude/history-citation-generator-iv1gim`）をもとに `main` を作ります。続けて **Settings** → **General** の **Default branch** を `main` に切り替えておくと、管理しやすくなります。
+   - すでに `main` がある場合は、作業ブランチから Pull Request を作って `main` にマージします。
 2. GitHub のリポジトリのページで **Settings** → 左のメニューの **Pages** を開きます。
 3. **Build and deployment** の **Source** で **Deploy from a branch** を選びます。
 4. **Branch** で `main`、フォルダで `/ (root)` を選び、**Save** を押します。
