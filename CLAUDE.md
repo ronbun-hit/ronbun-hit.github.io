@@ -2,6 +2,7 @@
 
 歴史学（人文系）の学生向けの参考文献表記ジェネレーター。GitHub Pages で公開し、のちに Google AdSense で広告を出す予定の静的サイト。
 リポジトリは GitHub の組織 `ronbun-hit` の `ronbun-hit.github.io`（組織サイト）で、公開 URL は `https://ronbun-hit.github.io/`（ドメインの直下）。
+独自ドメインは費用がかかるため使わない方針。AdSense で github.io のアドレスが使えなかったときに、運営者と相談して検討する。
 
 ## 絶対に守ること
 
@@ -85,4 +86,4 @@ B 編著所収    山田太郎「論文名」（鈴木一郎編『書名』吉�
 ## 仮置きのもの（公開・申請前に差し替える）
 
 - サイト名「歴史学 参考文献メーカー」（仮）。変えるなら全ページと `design/ogp-template.html` → `assets/img/ogp.png` を作り直す。
-- 独自ドメイン、`ads.txt`（AdSense のサイト運営者 ID が決まってから作る）。
+- `ads.txt`（AdSense のサイト運営者 ID が決まってから作る）。
