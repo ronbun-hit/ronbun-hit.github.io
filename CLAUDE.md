@@ -69,7 +69,8 @@ B 編著所収    山田太郎「論文名」（鈴木一郎編『書名』吉�
 
 ## ページ・SEO・広告
 
-- ページ：`index.html`（ツール）、`howto.html`、`articles/history-report-bibliography.html`（解説記事）、`privacy.html`、`contact.html`、`about.html`、`404.html`。ヘッダー・フッターは各ページに直接書いている（ビルドしないため）。ナビを変えるときは全ページを直す。
+- ページ：`index.html`（ツール）、`howto.html`、`articles/index.html`（書き方ガイドの記事一覧）、`articles/*.html`（解説記事 5 本）、`privacy.html`、`contact.html`、`about.html`、`404.html`。ヘッダー・フッターは各ページに直接書いている（ビルドしないため）。ナビを変えるときは全ページを直す。
+- ナビとフッターの「書き方ガイド」は記事一覧（`articles/`）を指す。記事ページではナビに `aria-current="true"`、一覧ページでは `aria-current="page"` を付ける。記事を足したら、一覧（`articles/index.html`）と、各記事の下にある「書き方ガイドのほかの記事」（`.related`）にも加える。
 - **ページを追加するとき**：`<title>`、`meta description`、`canonical`、OGP（`og:title`・`og:description`・`og:url`・`og:image` など）、`twitter:card`、アイコン、ヘッダー・フッターのナビ（`aria-current`）、`sitemap.xml` への追加、広告枠のコメント。リンクとアセットは相対パスで書く（ローカルの確認用サーバーでも、独自ドメインに移っても、そのまま動くように）。
 - canonical・OGP・sitemap・robots.txt には公開 URL `https://ronbun-hit.github.io/` を絶対 URL で書いている。独自ドメインに移ったら一括置換する（README 参照）。404.html はどの階層の URL でも表示されるため、`<base href="/">` でリンクの基準をサイトの一番上に固定している。
 - 広告は `<!-- 広告枠：… -->` のコメントで位置だけ確保している。広告コードはまだ入れない。入れるときは、ボタンのすぐ近くなど誤クリックを招く位置を避ける。

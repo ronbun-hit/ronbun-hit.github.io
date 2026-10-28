@@ -215,7 +215,7 @@ p {
   background: var(--surface-muted);
 }
 
-.site-nav a[aria-current="page"] {
+.site-nav a[aria-current] {
   color: var(--accent);
   font-weight: 700;
 }
@@ -946,6 +946,54 @@ pre {
 .cta {
   margin-top: 1.5em;
   text-align: center;
+}
+
+/* 長い引用（段落を分けて字下げする引用）の見本 */
+.example .quote-block {
+  padding-left: 2em;
+}
+
+/* 書き方ガイドの記事一覧 */
+.article-list {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0 !important;
+}
+
+.prose .article-list li + li {
+  margin-top: 0;
+  border-top: 1px solid var(--border);
+}
+
+.article-list li {
+  padding: 14px 0;
+}
+
+.prose .article-list h2 {
+  margin: 0 0 0.3em;
+  padding: 0;
+  border: 0;
+  font-size: 1.0625rem;
+}
+
+.article-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* 記事の下の「ほかの記事」 */
+.related {
+  margin-top: 24px;
+}
+
+.related ul {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.related li + li {
+  margin-top: 0.35em;
 }
 
 /* ---- 広い画面 -------------------------------------------------------------------- */
