@@ -160,7 +160,7 @@ node --test
 - [x] **運営者情報**（`about.html`）の運営者名と紹介文を書く（設定済み）
 - [x] **お問い合わせ**（`contact.html`）の Google フォームの URL を設定する（設定済み：https://forms.gle/7xYetTHFo9Wf4DUQ9）
 - [x] **解説記事**（`articles/history-report-bibliography.html`）の本文を書く（設定済み）
-- [x] 解説記事を増やす（記事は複数あるほうが審査に有利です）：CiNii の探し方・注の付け方・史料の引用・先行研究の集め方の4本を追加（2026-10-28）
+- [x] 解説記事を増やす（記事は複数あるほうが審査に有利です）：CiNii の探し方・注の付け方・史料の引用・先行研究の集め方の4本を追加（2026-11-22 公開）
 - [ ] **プライバシーポリシー**（`privacy.html`）の内容を確認する（アクセス解析などを追加したら追記する）
 - [x] 申請時：AdSense の管理画面に表示されるコード（`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-…" crossorigin="anonymous"></script>`）を、各ページの `<head>` に貼る（設定済み：`ca-pub-4502375566114455`。ページを追加したら、そのページにも貼る）
 - [x] リポジトリの直下に `ads.txt` を作り、次の 1 行を書く（`pub-` の後は自分のサイト運営者 ID。設定済み）
