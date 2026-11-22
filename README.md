@@ -157,11 +157,11 @@ node --test
 - [x] **解説記事**（`articles/history-report-bibliography.html`）の本文を書く（設定済み）
 - [ ] 解説記事を増やす（記事は複数あるほうが審査に有利です）
 - [ ] **プライバシーポリシー**（`privacy.html`）の内容を確認する（アクセス解析などを追加したら追記する）
-- [ ] 申請時：AdSense の管理画面に表示されるコード（`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-…" crossorigin="anonymous"></script>`）を、各ページの `<head>` にある「広告：Google AdSense の審査用・自動広告用コード」のコメントの位置に貼る
-- [ ] リポジトリの直下に `ads.txt` を作り、次の 1 行を書く（`pub-` の後は自分のサイト運営者 ID）
+- [x] 申請時：AdSense の管理画面に表示されるコード（`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-…" crossorigin="anonymous"></script>`）を、各ページの `<head>` に貼る（設定済み：`ca-pub-4502375566114455`。ページを追加したら、そのページにも貼る）
+- [x] リポジトリの直下に `ads.txt` を作り、次の 1 行を書く（`pub-` の後は自分のサイト運営者 ID。設定済み）
 
   ```text
-  google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+  google.com, pub-4502375566114455, DIRECT, f08c47fec0942fa0
   ```
 
 - [ ] 欧州経済領域（EEA）・英国・スイスからのアクセスに広告を出す場合は、AdSense の「プライバシーとメッセージ」で同意メッセージを設定する

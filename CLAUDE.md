@@ -6,7 +6,7 @@
 
 ## 絶対に守ること
 
-- **素の HTML・CSS・JavaScript だけ**。フレームワーク、ビルド工程、外部ライブラリ（CDN の読み込みや Web フォントを含む）は使わない。リポジトリをそのまま GitHub Pages（`main` の `/ (root)`）で配信できる状態を保つ。
+- **素の HTML・CSS・JavaScript だけ**。フレームワーク、ビルド工程、外部ライブラリ（CDN の読み込みや Web フォントを含む）は使わない（例外は各ページの `<head>` にある Google AdSense のコードだけ）。リポジトリをそのまま GitHub Pages（`main` の `/ (root)`）で配信できる状態を保つ。
 - **入力内容をサーバーに送らない**。`fetch` などで外部と通信する処理を、ツールに足さない。この方針はトップページとプライバシーポリシーに明記してあるので、変えるならページの記述も同時に直す（アクセス解析を入れる場合もプライバシーポリシーを更新する）。
 - **localStorage の読み書きは必ず try/catch で囲む**（`core/storage.js` を経由する）。使えない環境でもツールが動くこと。
 - **「入力の読み取り」と「書式への整形」を混ぜない**（下の「設計」を参照）。
@@ -70,9 +70,9 @@ B 編著所収    山田太郎「論文名」（鈴木一郎編『書名』吉�
 ## ページ・SEO・広告
 
 - ページ：`index.html`（ツール）、`howto.html`、`articles/history-report-bibliography.html`（解説記事）、`privacy.html`、`contact.html`、`about.html`、`404.html`。ヘッダー・フッターは各ページに直接書いている（ビルドしないため）。ナビを変えるときは全ページを直す。
-- **ページを追加するとき**：`<title>`、`meta description`、`canonical`、OGP（`og:title`・`og:description`・`og:url`・`og:image` など）、`twitter:card`、アイコン、ヘッダー・フッターのナビ（`aria-current`）、`sitemap.xml` への追加、広告枠のコメント。リンクとアセットは相対パスで書く（ローカルの確認用サーバーでも、独自ドメインに移っても、そのまま動くように）。
+- **ページを追加するとき**：`<title>`、`meta description`、`canonical`、OGP（`og:title`・`og:description`・`og:url`・`og:image` など）、`twitter:card`、アイコン、ヘッダー・フッターのナビ（`aria-current`）、`sitemap.xml` への追加、`<head>` の Google AdSense のコード、広告枠のコメント。リンクとアセットは相対パスで書く（ローカルの確認用サーバーでも、独自ドメインに移っても、そのまま動くように）。
 - canonical・OGP・sitemap・robots.txt には公開 URL `https://ronbun-hit.github.io/` を絶対 URL で書いている。独自ドメインに移ったら一括置換する（README 参照）。404.html はどの階層の URL でも表示されるため、`<base href="/">` でリンクの基準をサイトの一番上に固定している。
-- 広告は `<!-- 広告枠：… -->` のコメントで位置だけ確保している。広告コードはまだ入れない。入れるときは、ボタンのすぐ近くなど誤クリックを招く位置を避ける。
+- 広告は Google AdSense（サイト運営者 ID `ca-pub-4502375566114455`）。各ページ（404.html を除く）の `<head>` にサイト用のコードを入れ、リポジトリの直下に `ads.txt` を置いている。広告ユニットは、審査に通ってから `<!-- 広告枠：… -->` のコメントの位置に入れる。入れるときは、ボタンのすぐ近くなど誤クリックを招く位置を避ける。
 - 解説記事は増やしていく予定。新しい記事は `articles/` に置き、既存の記事の作り（head の各種メタタグ、ヘッダー・フッター、目次、`example` の表記例）をひな形にする。書きかけの箇所は `todo-note` の枠で示し、公開前に消す。記事の本文は運営者が書いたもので、内容を変えるときは運営者に確認する。
 - お問い合わせは Google フォーム（https://forms.gle/7xYetTHFo9Wf4DUQ9）へのリンク。フォームを作り直したら `contact.html` のリンクを差し替える。
 - `index.html` の `<head>` にある `google-site-verification` のメタタグは、Google Search Console の所有確認用。消すと確認が外れるので残す（独自ドメインに移ったら、新しい URL で確認し直す）。
@@ -86,4 +86,3 @@ B 編著所収    山田太郎「論文名」（鈴木一郎編『書名』吉�
 ## 仮置きのもの（公開・申請前に差し替える）
 
 - サイト名「歴史学 参考文献メーカー」（仮）。変えるなら全ページと `design/ogp-template.html` → `assets/img/ogp.png` を作り直す。
-- `ads.txt`（AdSense のサイト運営者 ID が決まってから作る）。
